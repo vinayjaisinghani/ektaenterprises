@@ -1,0 +1,138 @@
+{% extends 'shoeshowroom/template.html' %}
+
+
+{% load staticfiles %}
+{% block content %}
+	
+	<br><br><br>
+	<div class="row">
+		
+		<div class="col-md-1">
+			<p style="padding-left: 50px;font-size: 13px"><b>Name:</b></p>
+		</div>
+
+		<div class="col-md-1">
+			
+		</div>
+
+		<div class="col-md-2">
+			<p>{{userx.username}}</p>
+		</div>
+
+	</div>
+
+	<hr>
+	
+	<div class="row">
+		
+		<div class="col-md-1">
+			<p style="padding-left: 50px;font-size: 13px"><b>Email:</b></p>
+		</div>
+
+		<div class="col-md-1">
+			
+		</div>
+
+		<div class="col-md-2">
+			<p>{{userx.email}}</p>
+		</div>
+
+	</div>
+
+	<hr>
+
+	<div class="row">
+		
+		<div class="col-md-1">
+			<p style="padding-left: 50px;font-size: 13px"><b>Password:</b></p>
+		</div>
+
+		<div class="col-md-1">
+			
+		</div>
+
+		<div class="col-md-2">
+			<p>{{userx.password}}</p>
+		</div>
+
+	</div>
+
+	<hr>
+
+	<div class="row">
+		
+		<div class="col-md-1">
+			<p style="padding-left: 50px; font-size: 13px"><b>FirstName:</b></p>
+		</div>
+
+		<div class="col-md-1">
+			
+		</div>
+
+		<div class="col-md-2">
+			<p>{{userx.first_name}}</p>
+		</div>
+
+	</div>
+	<hr>
+	<div class="row">
+		
+		<div class="col-md-1">
+			<p style="padding-left: 50px; font-size: 13px"><b>LastName:</b></p>
+		</div>
+
+		<div class="col-md-1">
+			
+		</div>
+
+		<div class="col-md-2">
+			<p>{{userx.last_name}}</p>
+		</div>
+
+	</div>
+
+	<hr>
+	<br><br>
+	<p style="font-size: 20px;color: #a695a6">Change Query</p><br><br>
+	<form action="" method="Post" id="form3">
+		{% csrf_token %}
+
+		<div class="row">
+			<div class="col-md-1">
+				
+			</div>
+			<div class="col-md-2">
+				Delete: <input style="float: right;" type="checkbox" name="del" value="del"><br>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-1">
+				
+			</div>
+			<div class="col-md-2">
+				Make Admin: <input style="float: right;" type="checkbox" name="admin" value="admin"><br>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-1">
+				
+			</div>
+			<div class="col-md-3">
+				<p>Change Pass: &nbsp &nbsp<input type="text" name="pass" ></p>
+			</div>
+		</div>
+	</form>
+	<br>
+	<div class="row">
+        <div class="col-md-2">
+            
+        </div>
+        <div class="col-md-2">
+            <button type="submit" form="form3" value="Submit">Save</button>
+        </div>
+    </div>
+    <br><br><br><br><br>
+
+{% endblock %}

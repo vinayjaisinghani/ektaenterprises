@@ -1,0 +1,16 @@
+{% extends 'shoeshowroom/template.html' %}
+
+
+{% load staticfiles %}
+{% block content %}
+	<br><br>
+	<ul>
+	{% for s in shippers %}
+		<li><a href="{% url 'shipperdetails' s.0 %}" style="font-size: 17px;color: darkblue;font-family: comic sans ms;text-decoration: none;">{{s.0}}&nbsp{{s.1}}</p></a>
+		</li>
+		<hr>
+	{% endfor %}
+	</ul>
+	<a style="text-decoration: none;" href="{% url 'addnewshipper' %}"> <p style="font-size: 20px">Add New Shipper</p></a>
+	<br><br><br><br><br><br><br><br>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'shoeshowroom/template.html' %}
+
+
+{% load staticfiles %}
+{% block content %}
+<p style="font-size: 20px;color: #a695a6">Shipper Details</p><br><br>
+	<div class="row">
+		<div class="col-md-4">
+			&nbsp
+		</div>
+
+		<div class="col-md-3">
+			<span><font style="font-size: 16px;font-family: comic sans ms">Company Name: {{shipper.1}}</font><br><br>
+			<span><font style="font-size: 16px;font-family: comic sans ms">Phone Number: {{shipper.2}}</font><br><br>
+			<span><font style="font-size: 16px;font-family: comic sans ms">Email: {{shipper.3}}</font><br><br>
+		</div>
+
+		
+	</div>
+	<br><br><br><br><br><br><br><br>
+{% endblock %}

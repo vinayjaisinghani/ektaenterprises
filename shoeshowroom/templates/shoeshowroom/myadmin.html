@@ -1,0 +1,77 @@
+{% extends 'shoeshowroom/template.html' %}
+
+
+{% load staticfiles %}
+{% block content %}
+
+	<h4 style="color: #a695a6">Site Administration</h1>
+	<br><br><br>
+	<div class="row">
+		
+		<div class="col-md-1">
+			<p style="padding-left: 50px;font-size: 13px"><b><a href="{% url 'useradmin' %}" style="text-decoration: none;
+			">Users</a></b></p>
+		</div>
+
+
+	</div>
+
+	<hr>
+	
+	<div class="row">
+		
+		<div class="col-md-1">
+			<p style="padding-left: 50px;font-size: 13px"><b><a href="{% url 'queryadmin' %}" style="text-decoration: none;
+			">Queries</a></b></p>
+		</div>
+
+
+	</div>
+
+
+	<hr>
+
+
+	<div class="row">
+		
+		<div class="col-md-1">
+			<p style="padding-left: 50px;font-size: 13px"><b><a href="{% url 'prodadmin' %}" style="text-decoration: none;
+			">Products</a></b></p>
+		</div>
+
+
+	</div>
+	
+
+	<hr>
+
+	<div class="row">
+		
+		<div class="col-md-1">
+			<p style="padding-left: 50px;font-size: 13px"><b><a href="{% url 'orderadmin' %}" style="text-decoration: none;
+			">Orders</a></b></p>
+		</div>
+
+
+	</div>
+	
+
+	<hr>
+
+	<div class="row">
+		
+		<div class="col-md-1">
+			<p style="padding-left: 50px;font-size: 13px"><b><a href="{% url 'shipperadmin' %}" style="text-decoration: none;
+			">Shippers</a></b></p>
+		</div>
+
+
+	</div>
+	
+
+	<hr>
+
+
+<br><br><br><br><br>	
+	
+{% endblock %}

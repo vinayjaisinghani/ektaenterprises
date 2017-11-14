@@ -1,0 +1,45 @@
+{% extends 'shoeshowroom/template.html' %}
+
+
+{% load staticfiles %}
+{% block content %}
+	<p style="font-size: 20px;color: #a695a6">Add Images</p><br><br>
+	<form method="post" enctype="multipart/form-data">
+	    {% csrf_token %}
+	    <div class="row">
+	    	<div class="col-md-1">
+	    	
+		    </div>
+		    <div class="col-md-2">
+		    	<input type="file" name="myfile1" required>	
+		    </div>
+		    <div class="col-md-1">
+		    	
+		    </div>
+		    <div class="col-md-2">
+		    	<input type="file" name="myfile2" required>
+		    </div>
+		    <div class="col-md-1">
+		    	
+		    </div>
+		    <div class="col-md-2">
+		    	<input type="file" name="myfile3" required>
+		    </div>
+	    </div>
+	    
+	    <br><br>
+	    
+	    <div class="row">
+	    	<div class="col-md-1">
+	    		
+	    	</div>
+	    	<div class="col-md-2">
+	    		<button type="submit">Upload</button>		
+	    	</div>
+	    </div>
+	    
+	</form>
+
+  
+
+{% endblock %}

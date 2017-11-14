@@ -1,0 +1,70 @@
+{% extends 'shoeshowroom/template.html' %}
+
+
+{% load staticfiles %}
+{% block content %}
+<p style="font-size: 20px;color: #a695a6">Add New Shipper</p><br><br>
+<form method="post" name="fms" >
+    {% csrf_token %}
+
+    <div class="row">
+      <div class="col-md-4">
+        
+      </div>
+
+      <div class="col-md-1">
+        <p>Company: </p>
+      </div>
+
+      <div class="col-md-1">
+        <p><input type="text" name="company" required> </p>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        
+      </div>
+
+      <div class="col-md-1">
+        <p>Phone: </p>
+      </div>
+
+      <div class="col-md-1">
+        <p><input type="number" name="phone" min="1" max="10000000000000000000" required> </p>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        
+      </div>
+
+      <div class="col-md-1">
+        <p>Email: </p>
+      </div>
+
+      <div class="col-md-1">
+        <p><input type="email" name="email" required> </p>
+      </div>
+
+    </div>
+
+    <br><br>
+    
+    <div class="row">
+      <div class="col-md-7">
+        
+      </div>
+
+      <div class="col-md-1">
+        <button class="btn-floating btn-large waves-effect waves-light" type="submit" style=><i class="material-icons"><strong>Continue</strong></i></button>
+      </div>
+
+    </div>
+  </form>
+  <br><br><br><br>
+
+{% endblock %}

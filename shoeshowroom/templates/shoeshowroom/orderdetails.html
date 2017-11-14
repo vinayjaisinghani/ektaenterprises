@@ -1,0 +1,47 @@
+{% extends 'shoeshowroom/template.html' %}
+
+
+{% load staticfiles %}
+{% block content %}
+    
+    <div class="row">
+    {%  for product in product_quan %}
+        <div class="col-md-4 text-center col-sm-6 col-xs-6">
+            <div class="thumbnail product-box">
+                <img src="data:image/png;base64,{{product.0.img1}}" width="150" height="150" alt="cant find"/><br>
+                <div class="caption">
+                    <span><font style="font-size: 16px;font-family: comic sans ms">{{product.0.company}}</font><br>
+                    <span><font style="font-size: 16px;font-family: comic sans ms">{{ product.0.modelname }}</font><br><br>
+                    <span><font style="font-size: 16px;font-family: platino"><strong>Price:&nbsp{{product.0.price}}</strong></font></span><br>
+                    <span><font style="font-size: 16px;font-family: platino"><strong>Size:&nbsp{{product.2}}</strong></font></span><br>
+                    <span><font style="font-size: 16px;font-family: platino"><strong>Quantity:&nbsp{{product.1}}</strong></font></span>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        {% if forloop.last %}
+            </div>
+        {% else %}
+
+            {% if forloop.counter|divisibleby:"3" %}
+                </div><div class="row">
+            {% endif %}
+
+        {% endif %}
+
+
+    {% endfor %}
+
+    <div class="row">
+
+        <div class="col-md-4">
+            
+        </div>
+
+        
+
+    </div>
+    
+	
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'shoeshowroom/template.html' %}
+
+
+{% load staticfiles %}
+{% block content %}
+
+<div class="row">
+{%  for product in all_products %}
+    <div class="col-md-4 text-center col-sm-6 col-xs-6">
+        <div class="thumbnail product-box">
+            <img src="data:image/png;base64,{{product.img1}}" width="150" height="150" alt="CAN'T FIND PICTURE"/>
+            <div class="caption">
+            	<span><font style="font-size: 16px;font-family: comic sans ms">{{product.company}}</font><br>
+            	<span><font style="font-size: 16px;font-family: comic sans ms">{{ product.modelname }}</font><br><br>
+                <span><font style="font-size: 16px;font-family: platino"><strong>Price:&nbsp{{product.price}}</strong></font></span>
+                <p></p>
+                <p>{% if user.is_superuser %} <a href="{% url 'proddetails' product.myid %}" class="btn btn-primary" role="button">See Details </a>{% else %}<a href="{% url 'details' product.myid %}" class="btn btn-primary" role="button">See Details</a>{% endif %}</p>
+            </div>
+        </div>
+    </div>
+    {% if forloop.last %}
+        </div>
+    {% else %}
+
+        {% if forloop.counter|divisibleby:"3" %}
+            </div><div class="row">
+        {% endif %}
+
+    {% endif %}
+
+
+{% endfor %}
+
+	
+{% endblock %}

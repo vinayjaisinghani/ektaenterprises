@@ -1,0 +1,87 @@
+{% extends 'shoeshowroom/template.html' %}
+
+
+{% load staticfiles %}
+{% block content %}
+	
+<form method="post" name="fm1" >
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="row">
+      <div class="col-md-4">
+        
+      </div>
+
+      <div class="col-md-1">
+        <p>{{ field.label_tag }}</p>
+      </div>
+
+      <div class="col-md-1">
+        <p>{{ field }}</p>
+      </div>
+
+    </div>
+    {% endfor %}
+    <br><br>
+    <div class="row">
+    	<div class="col-md-2">
+        
+    	</div>
+
+    	<div class="col-md-2">
+        <p><b>For:</b></p><br>
+          Male:<input style="float: right;" type="radio" name="gender" value="m" checked="checked"><br>
+          Female:<input style="float: right;" type="radio" name="gender" value="f"><br>
+          Kids:<input style="float: right;" type="radio" name="gender" value="k"><br>
+    	</div>
+
+    	<div class="col-md-1">
+    		
+    	</div>
+
+    	<div class="col-md-1">
+          
+    	</div>
+
+    	<div class="col-md-1">
+    		
+    	</div>
+
+		<div class="col-md-2">
+        <p><b>Collection</b></p><br>
+    		shoe_oxford:<input style="float: right;" type="radio" name="floater" value="shoe_oxford" checked="checked"><br>
+    		shoe_loafer:<input style="float: right;" type="radio" name="floater" value="shoe_loafer"><br>
+    		shoe_boot:<input style="float: right;" type="radio" name="floater" value="shoe_boot"><br>
+    		shoe_sport:<input style="float: right;" type="radio" name="floater" value="shoe_sport"><br>
+    		slipper_beach:<input style="float: right;" type="radio" name="floater" value="slipper_beach"><br>
+    		slipper_glider:<input style="float: right;" type="radio" name="floater" value="slipper_glider"><br>
+    		slipper_printed:<input style="float: right;" type="radio" name="floater" value="slipper_printed"><br>
+    		sandal_mules:<input style="float: right;" type="radio" name="floater" value="sandal_mules"><br>
+    		sandal_glider:<input style="float: right;" type="radio" name="floater" value="sandal_glider"><br>
+    		sandal_opentoe:<input style="float: right;" type="radio" name="floater" value="sandal_opentoe"><br>
+    		sock_winter:<input style="float: right;" type="radio" name="floater" value="sock_winter"><br>
+    		sock_sport:<input style="float: right;" type="radio" name="floater" value="sock_sport"><br>
+    	</div>
+
+    	<div class="col-md-1">
+
+    	</div>    	
+
+    </div>
+
+    <br><br>
+
+    </span>
+    <div class="row">
+      <div class="col-md-7">
+        
+      </div>
+
+      <div class="col-md-1">
+        <button class="btn-floating btn-large waves-effect waves-light" type="submit" style=><i class="material-icons"><strong>Continue</strong></i></button>
+      </div>
+
+    </div>
+  </form>
+
+{% endblock %}

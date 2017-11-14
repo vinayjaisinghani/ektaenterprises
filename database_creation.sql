@@ -1,0 +1,10 @@
+create database reqs;
+use reqs;
+create table relation(relid int primary key not null auto_increment, userid char(200), size int, quantity int, productid int);
+create table querysub(queryid int primary key not null auto_increment, name char(200), email char(200), query char(200), answer char(200));
+create table user(username char(200) primary key not null, first_name char(200), last_name char(200), email char(200),password char(200));
+create table orderx(order_id int primary key not null auto_increment, order_date char(200), shipping_address char(200), amount int, payment_left int, shipping_status int, reached int);
+create table orderrel(order_id int not null, userid char(200), size int, quantity int, productid int not null, primary key(order_id,productid));
+create table shipper(shipper_id int primary key not null auto_increment, company_name char(200), phone_number char(13), email char(200));
+create table product(myid int primary key auto_increment, floater char(200), company char(200), modelname char(200), gender char(200), price int, img1 longblob, img2 longblob, img3 longblob, size int, neck_height char(200), outer_material char(200), occasion char(200), weight char(200), pack_of int, availability int);
+create table shipment(shipper_id int not null, order_id int not null, primary key(shipper_id,order_id));

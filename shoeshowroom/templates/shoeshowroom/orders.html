@@ -1,0 +1,48 @@
+{% extends 'shoeshowroom/template.html' %}
+
+
+{% load staticfiles %}
+{% block content %}
+    {% if f %}
+        <h1>No Orders Yet</h1>
+    {% endif %}
+    <div class="row">
+    {%  for order in orders %}
+        <div class="col-md-4 text-center col-sm-6 col-xs-6">
+            <div class="thumbnail product-box">
+                <div class="caption">
+                    <span><font style="font-size: 16px;font-family: comic sans ms"><u>Order Date</u>: {{order.1}}</font><br><br>
+                    <span><font style="font-size: 16px;font-family: comic sans ms"><u>Shipping Address</u>:&nbsp{{order.2}}</font><br><br>
+                    <span><font style="font-size: 16px;font-family: comic sans ms"><u>Price</u>: {{order.3}}</font><br>
+                    <p></p>
+                    <span><font style="font-size: 16px;font-family: comic sans ms"><u>Payment Left</u>: {{order.4}}</font><br>
+                    <p></p>
+                    {% if order.6 %}
+                        <span><font style="font-size: 16px;font-family: comic sans ms">Reached</font><br>
+                        <p></p>
+                    {% else %}
+                        <span><font style="font-size: 16px;font-family: comic sans ms">Unreached</font><br>
+                        <p></p>
+                    {% endif %}
+                    <p style="display: inline;"><a href="{% url 'orderdetails' order.0 user.username %}" class="btn btn-success" role="button">Order Details</a> </p>
+                </div>
+            </div>
+        </div>
+        {% if forloop.last %}
+            </div>
+        {% else %}
+
+            {% if forloop.counter|divisibleby:"3" %}
+                </div><div class="row">
+            {% endif %}
+
+        {% endif %}
+
+
+    {% endfor %}
+
+    
+    
+	
+
+{% endblock %}

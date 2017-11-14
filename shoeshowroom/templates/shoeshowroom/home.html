@@ -1,0 +1,123 @@
+{% extends 'shoeshowroom/template.html' %}
+
+
+{% load staticfiles %}
+{% block content %}
+<br><br><br>
+
+<div class="row">
+
+    <div class="col-md-1">
+
+        <div>
+            
+        </div>
+    </div>
+
+    <div class="col-md-10">
+        
+        <div class="main box-border">
+            <div id="mi-slider" class="mi-slider">
+                <ul>
+
+                    <li>
+                        <img src="{% static "img/shoe1.jpg" %}" alt="img01">
+                    </li>
+                    <li>
+                        <img src="{% static "img/shoe2.jpg" %}" alt="img02">
+                    </li>
+                    <li>
+                        <img src="{% static "img/shoe3.jpg" %}" alt="img03">
+                    </li>
+                    <li>
+                        <img src="{% static "img/shoe4.jpg" %}" alt="img04">
+                    </li>
+                </ul>
+                <ul>
+
+                    <li>
+                        <img src="{% static "img/sand1.jpg" %}" alt="img01">
+                    </li>
+                    <li>
+                        <img src="{% static "img/sand2.jpg" %}" alt="img02">
+                    </li>
+                    <li>
+                        <img src="{% static "img/sand3.jpg" %}" alt="img03">
+                    </li>
+                    <li>
+                        <img src="{% static "img/sand4.jpg" %}" alt="img04">
+                    </li>
+                </ul>
+                <ul>
+
+                    <li>
+                        <img src="{% static "img/slip1.jpg" %}" alt="img01">
+                    </li>
+                    <li>
+                        <img src="{% static "img/sand2.jpg" %}" alt="img02">
+                    </li>
+                    <li>
+                        <img src="{% static "img/sand3.jpg" %}" alt="img03">
+                    </li>
+                    <li>
+                        <img src="{% static "img/sand4.jpg" %}" alt="img04">
+                    </li>
+                </ul>
+                <ul>
+
+                    <li>
+                        <img src="{% static "img/sock1.jpg" %}" alt="img01">
+                    </li>
+                    <li>
+                        <img src="{% static "img/sock2.jpg" %}" alt="img02">
+                    </li>
+                    <li>
+                        <img src="{% static "img/sock3.jpg" %}" alt="img03">
+                    </li>
+                    <li>
+                        <img src="{% static "img/sock4.jpg" %}" alt="img04">
+                    </li>
+                </ul>
+
+                <nav>
+                    <a href="#">Shoes</a>
+                    <a href="#">Sandals</a>
+                    <a href="#">Slippers</a>
+                    <a href="#">Socks</a>
+                </nav>
+            </div>
+            
+        </div>
+        <br />
+    </div>
+</div>
+
+<div class="row">
+{%  for product in list_of_products %}
+    <div class="col-md-4 text-center col-sm-6 col-xs-6">
+        <div class="thumbnail product-box">
+            <img src="data:image/png;base64,{{product.img1}}" width="150" height="150" alt="CAN'T FIND PICTURE"/>
+            <div class="caption">
+            	<span><font style="font-size: 16px;font-family: comic sans ms">{{product.company}}</font><br>
+            	<span><font style="font-size: 16px;font-family: comic sans ms">{{ product.modelname }}</font><br><br>
+                <span><font style="font-size: 16px;font-family: platino"><strong>Price:&nbsp{{product.price}}</strong></font></span>
+                <p></p>
+                <p>{% if user.is_superuser %} <a href="{% url 'proddetails' product.myid %}" class="btn btn-primary" role="button">See Details </a>{% else %}<a href="{% url 'details' product.myid %}" class="btn btn-primary" role="button">See Details</a>{% endif %}</p>
+            </div>
+        </div>
+    </div>
+    {% if forloop.last %}
+        </div>
+    {% else %}
+
+        {% if forloop.counter|divisibleby:"3" %}
+            </div><div class="row">
+        {% endif %}
+
+    {% endif %}
+
+
+{% endfor %}
+
+<br><br><br><br>
+{% endblock %}

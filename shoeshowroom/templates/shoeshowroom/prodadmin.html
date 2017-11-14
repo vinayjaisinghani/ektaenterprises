@@ -1,0 +1,17 @@
+{% extends 'shoeshowroom/template.html' %}
+
+
+{% load staticfiles %}
+{% block content %}
+	<br><br>
+	<ul>
+	{% for p in products %}
+		<li><a href="{% url 'proddetails' p.0 %}" style="font-size: 17px;color: darkblue;font-family: comic sans ms;text-decoration: none;">{{p.0}} &nbsp &nbsp {{p.2}} &nbsp &nbsp {{p.3}} &nbsp &nbsp {{p.1}}</a> &nbsp &nbsp 
+		{% if not p.6 %}<a href="{% url 'addpic' p.0 %}">Add Pic</a> {% endif %}
+		</li>
+		<hr>
+	{% endfor %}
+	</ul>
+	<a style="text-decoration: none;" href="{% url 'addnew' %}"> <p style="font-size: 20px">Add New Product</p></a>
+	<br><br><br><br><br><br><br><br>
+{% endblock %}
